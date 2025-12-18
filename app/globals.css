@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --primary-green: #2E7D32;
+  --primary-blue: #1565C0;
+  --danger-red: #C62828;
+  --practice-orange: #F57C00;
+  --background-white: #FFFFFF;
+  --text-primary: #212121;
+  --text-secondary: #616161;
+  --disabled-gray: #BDBDBD;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--background-white);
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accessibility: High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Text Size System - Applied globally */
+:root {
+  --text-size-multiplier: 1;
+}
+
+/* Default size (base) */
+[data-text-size="default"] {
+  --text-size-multiplier: 1;
+}
+
+/* Larger size - 10% increase (subtle) */
+[data-text-size="larger"] {
+  --text-size-multiplier: 1.1;
+}
+
+/* Largest size - 20% increase (moderate) */
+[data-text-size="largest"] {
+  --text-size-multiplier: 1.2;
+}
+
+/* Apply text sizes to all text elements */
+[data-text-size="larger"] body,
+[data-text-size="larger"] p,
+[data-text-size="larger"] span,
+[data-text-size="larger"] div,
+[data-text-size="larger"] button,
+[data-text-size="larger"] input,
+[data-text-size="larger"] textarea,
+[data-text-size="larger"] label,
+[data-text-size="larger"] h1,
+[data-text-size="larger"] h2,
+[data-text-size="larger"] h3,
+[data-text-size="larger"] h4,
+[data-text-size="larger"] h5,
+[data-text-size="larger"] h6,
+[data-text-size="larger"] a,
+[data-text-size="larger"] li,
+[data-text-size="larger"] td,
+[data-text-size="larger"] th {
+  font-size: calc(1em * var(--text-size-multiplier)) !important;
+}
+
+[data-text-size="largest"] body,
+[data-text-size="largest"] p,
+[data-text-size="largest"] span,
+[data-text-size="largest"] div,
+[data-text-size="largest"] button,
+[data-text-size="largest"] input,
+[data-text-size="largest"] textarea,
+[data-text-size="largest"] label,
+[data-text-size="largest"] h1,
+[data-text-size="largest"] h2,
+[data-text-size="largest"] h3,
+[data-text-size="largest"] h4,
+[data-text-size="largest"] h5,
+[data-text-size="largest"] h6,
+[data-text-size="largest"] a,
+[data-text-size="largest"] li,
+[data-text-size="largest"] td,
+[data-text-size="largest"] th {
+  font-size: calc(1em * var(--text-size-multiplier)) !important;
+}
+
+/* Ensure base font size scales */
+[data-text-size="larger"] html {
+  font-size: calc(18px * var(--text-size-multiplier));
+}
+
+[data-text-size="largest"] html {
+  font-size: calc(18px * var(--text-size-multiplier));
+}
+
